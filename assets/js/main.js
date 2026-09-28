@@ -5,9 +5,9 @@
   (function () {
     var isLowEnd = /Android 4\.|Android 5\.|iPhone OS 9|iPhone OS 10/i.test(navigator.userAgent);
     var hasLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
-    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var prefersReduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     var isMobile = 'ontouchstart' in window;
-    var noBackdrop = !CSS.supports('backdrop-filter', 'blur(10px)');
+    var noBackdrop = !(window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(10px)'));
 
     if (isLowEnd || hasLowMemory || prefersReduced || (isMobile && noBackdrop)) {
       document.documentElement.classList.add('performance-mode');
@@ -137,7 +137,7 @@
       return;
     }
 
-    var revealOpts = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    var revealOpts = { threshold: 0, rootMargin: '0px 0px -50px 0px' };
     if (scrollContainer !== window) {
       revealOpts.root = scrollContainer;
     }
