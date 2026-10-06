@@ -56,17 +56,26 @@
     try { var raw = localStorage.getItem(FALLBACK_KEY); var arr = raw ? safeParse(raw, []) : []; return Array.isArray(arr) ? arr : []; } catch (e) { return []; }
   }
   function fallbackSetAll(arr) {
-    try { localStorage.setItem(FALLBACK_KEY, JSON.stringify(arr)); } catch (e) {}
+    // Must surface quota failures: swallowing them here made "saved" reports lies.
+    try { localStorage.setItem(FALLBACK_KEY, JSON.stringify(arr)); return true; } catch (e) { return false; }
   }
   function fallbackGet(key) {
     var arr = fallbackGetAll(); for (var i = 0; i < arr.length; i++) if (arr[i].id === key) return arr[i]; return null;
   }
   function fallbackPut(data) {
     var arr = fallbackGetAll(); var idx = -1; for (var i = 0; i < arr.length; i++) if (arr[i].id === data.id) idx = i;
-    if (idx >= 0) arr[idx] = data; else arr.push(data); fallbackSetAll(arr); return data;
+    if (idx >= 0) arr[idx] = data; else arr.push(data);
+    if (!fallbackSetAll(arr)) {
+      if (idx >= 0) arr.splice(idx, 1); else arr.pop();
+      var err = new Error('Failed to save note');
+      err.name = 'QuotaExceededError';
+      throw err;
+    }
+    return data;
   }
   function fallbackDelete(key) {
-    var arr = fallbackGetAll(); var n = []; for (var i = 0; i < arr.length; i++) if (arr[i].id !== key) n.push(arr[i]); fallbackSetAll(n);
+    var arr = fallbackGetAll(); var n = []; for (var i = 0; i < arr.length; i++) if (arr[i].id !== key) n.push(arr[i]);
+    if (!fallbackSetAll(n)) { var err = new Error('Failed to delete note'); err.name = 'QuotaExceededError'; throw err; }
   }
 
   function idbGet(key) {
@@ -102,7 +111,10 @@
   }
 
   function idbPut(data) {
-    if (useFallback) { fallbackPut(data); return Promise.resolve(data); }
+    if (useFallback) {
+      try { fallbackPut(data); return Promise.resolve(data); }
+      catch (e) { return Promise.reject(e); }
+    }
     return openDB().then(function (database) {
       if (!database || useFallback) { fallbackPut(data); return data; }
       return new Promise(function (resolve, reject) {
@@ -116,7 +128,10 @@
   }
 
   function idbDelete(key) {
-    if (useFallback) { fallbackDelete(key); return Promise.resolve(); }
+    if (useFallback) {
+      try { fallbackDelete(key); return Promise.resolve(); }
+      catch (e) { return Promise.reject(e); }
+    }
     return openDB().then(function (database) {
       if (!database || useFallback) { fallbackDelete(key); return; }
       return new Promise(function (resolve) {
@@ -264,7 +279,7 @@
       }).catch(function (e) {
         if (e && e.message === 'DUPLICATE_CANCELLED') throw new Error('Save cancelled — keeping existing duplicate');
         if (e && e.message === 'DUPLICATE') throw new Error('Duplicate content already saved');
-        if (e && e.name === 'QuotaExceededError' || (e.message && e.message.includes('quota'))) throw new Error('Unable to save notes. Please free some browser storage and try again.');
+        if (e && (e.name === 'QuotaExceededError' || (e.message && String(e.message).toLowerCase().indexOf('quota') !== -1))) throw new Error('Unable to save notes. Please free some browser storage and try again.');
         throw e;
       });
     },
@@ -344,9 +359,27 @@
     exportAll: function () { return idbGetAll().then(function (notes) { return JSON.stringify({ v: 2, exportedAt: Date.now(), notes: notes }, null, 2); }); },
     importAll: function (json) {
       var data = typeof json === 'string' ? safeParse(json, null) : json;
-      if (!data || !data.notes || !Array.isArray(data.notes)) return Promise.reject(new Error('Invalid backup'));
-      var promises = []; for (var i = 0; i < data.notes.length; i++) promises.push(idbPut(data.notes[i]));
-      return Promise.all(promises);
+      if (!data || !Array.isArray(data.notes)) return Promise.reject(new Error('Invalid backup'));
+      var notes = [];
+      for (var i = 0; i < data.notes.length; i++) {
+        var n = data.notes[i];
+        // A malformed entry would make the whole Promise.all reject via DataError
+        if (!n || typeof n !== 'object' || !n.id) continue;
+        n.id = String(n.id);
+        n.title = typeof n.title === 'string' ? n.title : 'Untitled note';
+        n.markdown = typeof n.markdown === 'string' ? n.markdown : '';
+        n.html = typeof n.html === 'string' ? n.html : '';
+        n.preview = typeof n.preview === 'string' ? n.preview : '';
+        n.tags = Array.isArray(n.tags) ? n.tags : [];
+        n.folder = typeof n.folder === 'string' ? n.folder : 'General';
+        n.pinned = !!n.pinned;
+        n.createdAt = typeof n.createdAt === 'number' ? n.createdAt : Date.now();
+        n.updatedAt = typeof n.updatedAt === 'number' ? n.updatedAt : Date.now();
+        n.size = typeof n.size === 'number' ? n.size : 0;
+        notes.push(n);
+      }
+      if (!notes.length) return Promise.reject(new Error('No valid notes in backup'));
+      return Promise.all(notes.map(function (n) { return idbPut(n); }));
     },
     fixBadTitles: function () {
       return idbGetAll().then(function (notes) {
@@ -372,8 +405,12 @@
           if (nt2 && nt2 !== nt && !nt2bad2) {
             n.title = nt2; n.updatedAt = Date.now();
             try {
-              if (n.html) {
-                var d = document.createElement('div'); d.innerHTML = n.html;
+              // Only rewrite stored HTML through a sanitizer; without DOMPurify
+              // the raw markup would be parsed unsanitized.
+              var canSanitize = !!(window.DOMPurify && typeof window.DOMPurify.sanitize === 'function');
+              if (n.html && canSanitize) {
+                var d = document.createElement('div');
+                d.innerHTML = window.DOMPurify.sanitize(String(n.html));
                 var fh2 = d.querySelector('h1,h2'); if (fh2 && /master\s+study\s+notes/i.test(fh2.textContent)) fh2.textContent = nt2;
                 var ahs = d.querySelectorAll('h1,h2,h3'); for (var hi2=0; hi2<ahs.length; hi2++) { var htt=(ahs[hi2].textContent||'').trim(); if (/^(ultra|short|revision|aiultra|revisionultra)$/i.test(htt) || htt.toLowerCase().indexOf('ultra short revision')!==-1) { ahs[hi2].textContent = nt2; break; } }
                 n.html = d.innerHTML;

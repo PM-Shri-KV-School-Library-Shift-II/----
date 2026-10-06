@@ -17,6 +17,7 @@
   --accent: #3b82f6;
   --accent-light: #60a5fa;
   --accent-dark: #2563eb;
+  --accent-deep: #1d4ed8;
   --gold: #f59e0b;
   --gold-light: #fbbf24;
   --success: #10b981;
@@ -221,7 +222,8 @@ body.menu-open {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 1100px;
+  width: 100%;
 }
 
 .hero-logos {
@@ -230,11 +232,6 @@ body.menu-open {
   align-items: center;
   gap: 24px;
   margin-bottom: 28px;
-}
-
-.hero-content {
-  max-width: 1100px;
-  width: 100%;
 }
 
 .hero-title-row {
@@ -259,6 +256,8 @@ body.menu-open {
   width: clamp(84px, 14vw, 132px);
   height: clamp(84px, 14vw, 132px);
   justify-self: center;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
 }
 
 @media (max-width: 768px) {
@@ -299,33 +298,6 @@ body.menu-open {
   .hero-title-row .hero-logo-img:first-child,
   .hero-title-row .hero-logo-img:last-child { width: 72px; height: 72px; }
 }
-  .hero-title-row .hero-logo-img:first-child {
-    grid-area: logo1;
-    justify-self: end;
-    width: 80px;
-    height: 80px;
-  }
-  .hero-title-row .hero-logo-img:last-child {
-    grid-area: logo2;
-    justify-self: start;
-    width: 80px;
-    height: 80px;
-  }
-  .hero-title-row h1 {
-    grid-area: title;
-    max-width: 100%;
-    font-size: 1.4rem;
-    line-height: 1.3;
-    letter-spacing: 0;
-  }
-}
-
-@media (max-width: 380px) {
-  .hero-title-row { row-gap: 24px; }
-  .hero-title-row h1 { font-size: 1.15rem; }
-  .hero-title-row .hero-logo-img:first-child,
-  .hero-title-row .hero-logo-img:last-child { width: 68px; height: 68px; }
-}
 
 .hero-logo-img {
   height: 80px;
@@ -345,7 +317,7 @@ body.menu-open {
 }
 
 .hero h1 .highlight {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -485,14 +457,15 @@ body.menu-open {
 
 .glass-card p {
   font-size: 0.85rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   line-height: 1.5;
 }
 
 .glass-card .card-arrow {
   position: absolute;
   top: 20px; right: 20px;
-  color: var(--gray-300);
+  /* gray-400 on white is 2.5:1 (fails WCAG AA); gray-500 is 4.83:1 */
+  color: var(--gray-500);
   font-size: 1rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -522,7 +495,7 @@ body.menu-open {
 }
 
 .section-label p {
-  color: var(--gray-400);
+  color: var(--gray-500);
   max-width: 500px;
   margin: 0 auto;
   min-height: 1.4em;
@@ -543,7 +516,7 @@ body.menu-open {
   border-left: 4px solid var(--accent);
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  cursor: default;
   position: relative;
 }
 
@@ -571,7 +544,7 @@ body.menu-open {
 .event-date {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -737,7 +710,7 @@ body.menu-open {
 
 .notif-tap-hint {
   font-size: 0.72rem;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-top: 5px;
   font-weight: 500;
   display: flex;
@@ -750,7 +723,7 @@ body.menu-open {
   cursor: pointer;
   padding: 4px;
   flex-shrink: 0;
-  color: var(--gray-400);
+  color: var(--gray-500);
   line-height: 1;
   border-radius: 50%;
   transition: background 0.2s ease, color 0.2s ease;
@@ -820,7 +793,7 @@ body.menu-open {
 
 .feature-item p {
   font-size: 0.85rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   line-height: 1.5;
 }
 
@@ -867,7 +840,7 @@ body.menu-open {
 }
 
 .cta-section p {
-  color: var(--gray-400);
+  color: var(--gray-500);
   max-width: 500px;
   margin: 0 auto 28px;
 }
@@ -990,7 +963,7 @@ footer {
   border-top: 1px solid var(--gray-700);
   text-align: center;
   font-size: 0.8rem;
-  color: var(--gray-500);
+  color: var(--gray-400);
 }
 
 /* ─── Scroll-Reveal Animations ─── */
@@ -1124,7 +1097,7 @@ footer {
 }
 
 .sub-page-header p {
-  color: var(--gray-400);
+  color: var(--gray-500);
   max-width: 600px;
   margin: 0 auto;
   min-height: 1.4em;
@@ -1189,16 +1162,17 @@ footer {
   flex-direction: column;
 }
 
-.sub-card-body h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--gray-800);
-  margin-bottom: 6px;
-}
+.sub-card-body h2,
+  .sub-card-body h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--gray-800);
+        margin-bottom: 6px;
+      }
 
 .sub-card-body p {
   font-size: 0.85rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   line-height: 1.6;
   margin-bottom: 6px;
 }
@@ -1206,7 +1180,7 @@ footer {
 .sub-card-meta {
   margin-top: auto;
   font-size: 0.78rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
   line-height: 1.5;
 }
 
@@ -1449,7 +1423,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 500;
@@ -1524,7 +1498,8 @@ footer {
   padding: 16px;
 }
 
-.video-caption h3 {
+.video-caption h2,
+  .video-caption h3 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--gray-800);
@@ -1533,7 +1508,7 @@ footer {
 
 .video-caption p {
   font-size: 0.85rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .pdf-preview-section {
@@ -1556,6 +1531,7 @@ footer {
 .pdf-item-header {
   background: var(--danger);
   color: white;
+  margin: 0;
   padding: 14px 16px;
   display: flex;
   align-items: center;
@@ -1586,7 +1562,7 @@ footer {
   gap: 12px;
   padding: 40px 20px;
   text-align: center;
-  color: var(--gray-400);
+  color: var(--gray-500);
   min-height: 300px;
 }
 
@@ -1617,7 +1593,7 @@ footer {
   align-items: center;
   background: var(--gray-50);
   font-size: 0.82rem;
-  color: var(--gray-400);
+  color: var(--gray-500);
 }
 
 .pdf-actions {
@@ -1632,7 +1608,7 @@ footer {
   gap: 5px;
   padding: 6px 14px;
   background: var(--white);
-  color: var(--accent);
+  color: var(--accent-dark);
   border: 1px solid var(--accent);
   border-radius: 50px;
   text-decoration: none;
@@ -1642,7 +1618,7 @@ footer {
 }
 
 .btn-view:hover {
-  background: var(--accent);
+  background: var(--accent-dark);
   color: white;
 }
 
@@ -1673,8 +1649,8 @@ footer {
 }
 
 .tab-btn:hover:not(.active) {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
 }
 
 .tab-btn:focus-visible {
@@ -1755,13 +1731,84 @@ button:focus:not(:focus-visible) {
   margin-right: 8px;
 }
 
-/* ─── Hide scrollbar (aesthetic) ─── */
+/* ─── Visible scrollbar affordance (WCAG 1.4.10 / usability) ─── */
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
 }
 html::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
+  display: initial;
+  width: 10px;
+  height: 10px;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 8px;
+  border: 2px solid var(--white-off);
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+
+/* ─── Accessibility helpers ─── */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 100000;
+  padding: 10px 18px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.skip-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Disabled controls must look disabled */
+button:disabled,
+.btn-primary[aria-disabled="true"],
+.btn-outline[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Keyboard/AT operable non-native controls */
+[role="button"],
+[role="tab"],
+[role="option"],
+a[href],
+button,
+input,
+select,
+textarea,
+summary {
+  -webkit-tap-highlight-color: rgba(59, 130, 246, 0.2);
 }

@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src 'none'; object-src 'none'; connect-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src 'none'; object-src 'none'; connect-src 'self'; base-uri 'self'; form-action 'none'">
     <title>Contact Us - PM Shri KV Library</title>
+    <meta name="description" content="Contact the PM SHRI KV Aliganj (Shift II) Library - open the email app or Gmail, or copy our email address.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B">
     <link rel="stylesheet" href="../assets/css/style.min.css">
     <link rel="icon" href="../LOGO/KV-LOGO.png">
@@ -68,7 +69,7 @@
         }
 
         .contact-card .subtitle {
-            color: var(--gray-400);
+            color: var(--gray-500);
             font-size: 1rem;
             margin-bottom: 36px;
         }
@@ -168,7 +169,7 @@
 
         .platform-hint {
             font-size: 0.82rem;
-            color: var(--gray-400);
+            color: var(--gray-500);
             margin-top: 4px;
             width: 100%;
         }
@@ -178,7 +179,7 @@
             align-items: center;
             gap: 8px;
             margin-top: 32px;
-            color: var(--gray-400);
+            color: var(--gray-500);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
@@ -186,7 +187,7 @@
         }
 
         .back-home-link:hover {
-            color: var(--accent);
+            color: var(--accent-dark);
             gap: 12px;
         }
 
@@ -214,43 +215,44 @@
 </head>
 <body>
 
-<noscript><div class="noscript-warning"><i class="fas fa-exclamation-triangle"></i> This site works best with JavaScript enabled. Some features may not function properly.</div></noscript>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<noscript><div class="noscript-warning"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> This site works best with JavaScript enabled. Some features may not function properly.</div></noscript>
 
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo" aria-label="Home">
-      <i class="fas fa-book-open" style="color:var(--accent)"></i>
+      <i class="fas fa-book-open" aria-hidden="true" style="color:var(--accent)"></i>
       <span>PM Shri KV Library</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
       <li><a href="../index.html#explore">Explore</a></li>
       <li><a href="../index.html#events">Events</a></li>
     </ul>
-    <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
   </div>
 </nav>
 
-<div class="contact-page">
+<main class="contact-page" id="main-content" tabindex="-1">
     <div class="contact-card">
         <div class="contact-icon-wrap">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
         </div>
 
         <h1>Get In Touch</h1>
         <p class="subtitle">We'd love to hear from you</p>
         <div class="contact-divider"></div>
 
-        <h2><i class="fas fa-paper-plane" style="color:var(--accent);margin-right:8px"></i>Send us a message</h2>
+        <h2><i class="fas fa-paper-plane" aria-hidden="true" style="color:var(--accent);margin-right:8px"></i>Send us a message</h2>
 
         <div class="email-options">
-            <a href="mailto:librarykvas2&#64;gmail&#46;com?subject=[Title of your Topic]&body=Type your Message Over Here" class="email-link" id="desktopEmailLink">
-                <i class="fas fa-envelope-open-text"></i>
+            <a href="mailto:librarykvas2&#64;gmail&#46;com?subject=%5BTitle%20of%20your%20Topic%5D&amp;body=Type%20your%20Message%20Over%20Here" class="email-link" id="desktopEmailLink">
+                <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
                 Open Email App For Phone System
             </a>
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=librarykvas2&#64;gmail&#46;com&su=[Title of your Topic]&body=Type your Message Over Here" target="_blank" rel="noopener noreferrer" class="email-link" id="gmailLink">
-                <i class="fab fa-google"></i>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=librarykvas2&#64;gmail&#46;com&amp;su=%5BTitle%20of%20your%20Topic%5D&amp;body=Type%20your%20Message%20Over%20Here" target="_blank" rel="noopener noreferrer" class="email-link" id="gmailLink">
+                <i class="fab fa-google" aria-hidden="true"></i>
                 Open in Gmail For PC System
             </a>
         </div>
@@ -258,100 +260,16 @@
         <div class="email-display">
             <div style="flex:1">
                 <div class="email-address">librarykvas2&#64;gmail&#46;com</div>
-                <div class="platform-hint" id="platformHint">Click a button above or copy this email address</div>
+                <div class="platform-hint" id="platformHint" role="status" aria-live="polite">Click a button above or copy this email address</div>
             </div>
-            <button class="copy-btn" id="copyBtn">Copy</button>
+            <button type="button" class="copy-btn" id="copyBtn">Copy</button>
         </div>
 
-        <a href="../index.html" class="back-home-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <a href="../index.html" class="back-home-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Home</a>
     </div>
-</div>
+</main>
 
 <script src="../assets/js/bundle.min.js" defer></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const desktopEmailLink = document.getElementById('desktopEmailLink');
-        const gmailLink = document.getElementById('gmailLink');
-        const copyBtn = document.getElementById('copyBtn');
-        const platformHint = document.getElementById('platformHint');
-        let notificationTimeout;
-
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const isWindows = navigator.platform.indexOf('Win') > -1;
-
-        if (isWindows) {
-            platformHint.textContent = "Recommended for mobile devices";
-            desktopEmailLink.innerHTML = '<i class="fas fa-envelope-open-text"></i> Open in Email App';
-        } else if (isMobile) {
-            platformHint.textContent = "If first button doesn't work, try Gmail or copy the address";
-            desktopEmailLink.innerHTML = '<i class="fas fa-envelope-open-text"></i> Open Email';
-        } else {
-            platformHint.textContent = "Choose your preferred option";
-        }
-
-        function showNotification(message) {
-            if (notificationTimeout) clearTimeout(notificationTimeout);
-            const existing = document.querySelector('.email-notification');
-            if (existing) existing.remove();
-
-            const notification = document.createElement('div');
-            notification.className = 'email-notification';
-            notification.style.cssText = 'position:fixed;bottom:24px;right:24px;background:var(--gray-800);color:white;padding:14px 20px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:10000;font-size:0.9rem;animation:notifIn 0.35s ease-out;';
-            notification.textContent = message;
-
-            if (!document.getElementById('notif-styles')) {
-                const s = document.createElement('style');
-                s.id = 'notif-styles';
-                s.textContent = '@keyframes notifIn{from{transform:translateX(100%);opacity:0}}@keyframes notifOut{from{transform:translateX(0);opacity:1}to{transform:translateX(100%);opacity:0}}';
-                document.head.appendChild(s);
-            }
-
-            document.body.appendChild(notification);
-            notificationTimeout = setTimeout(() => {
-                notification.style.animation = 'notifOut 0.3s ease-out';
-                setTimeout(() => { if (notification.parentNode) notification.remove(); }, 300);
-            }, 3000);
-        }
-
-        desktopEmailLink.addEventListener('click', function(e) {
-            if (isMobile) showNotification('Opening your email app...');
-            else if (isWindows) {
-                showNotification('Attempting to open your default email client...');
-                setTimeout(() => { if (!document.hidden) showNotification('If nothing happened, try the Gmail option below'); }, 1500);
-            } else showNotification('Opening your default email client...');
-        });
-
-        gmailLink.addEventListener('click', function() {
-            showNotification('Opening Gmail in your browser...');
-        });
-
-        copyBtn.addEventListener('click', function() {
-            const email = 'librarykvas2' + String.fromCharCode(64) + 'gmail' + String.fromCharCode(46) + 'com';
-            navigator.clipboard.writeText(email).then(function() {
-                copyBtn.textContent = 'Copied!';
-                copyBtn.classList.add('copied');
-                showNotification('Email address copied to clipboard!');
-                setTimeout(() => {
-                    copyBtn.textContent = 'Copy';
-                    copyBtn.classList.remove('copied');
-                }, 2000);
-            }).catch(function() {
-                const textArea = document.createElement('textarea');
-                textArea.value = email;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                copyBtn.textContent = 'Copied!';
-                copyBtn.classList.add('copied');
-                showNotification('Email address copied to clipboard!');
-                setTimeout(() => {
-                    copyBtn.textContent = 'Copy';
-                    copyBtn.classList.remove('copied');
-                }, 2000);
-            });
-        });
-    });
-</script>
+<script src="../assets/js/contact.js" defer></script>
 </body>
 </html>

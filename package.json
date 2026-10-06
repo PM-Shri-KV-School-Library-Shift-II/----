@@ -1,5 +1,33 @@
 {
-  "dependencies": {
-    "terser": "^5.49.0"
+  "name": "pm-shri-kv-aliganj-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for PM SHRI Kendriya Vidyalaya, Aliganj (2nd Shift) Library",
+  "license": "MIT",
+  "homepage": "https://pm-shri-kv-school-library-shift-ii.github.io/----/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PM-Shri-KV-School-Library-Shift-II/----.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PM-Shri-KV-School-Library-Shift-II/----/issues"
+  },
+  "author": "PM SHRI Kendriya Vidyalaya, Aliganj (2nd Shift) Library",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "node scripts/build-js.js",
+    "build:css": "node scripts/build-css.js",
+    "check": "node scripts/check.js",
+    "smoke": "node scripts/smoke.js",
+    "audit": "npm audit --audit-level=high",
+    "test": "npm run check && npm run smoke"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "puppeteer-core": "^25.12.0",
+    "terser": "^5.51.2"
   }
 }

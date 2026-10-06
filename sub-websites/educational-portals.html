@@ -5,29 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src 'none'; object-src 'none'; connect-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Educational Portals - PM SHRI KV Library</title>
+  <meta name="description" content="Curated digital learning platforms for students and teachers">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B">
   <link rel="stylesheet" href="../assets/css/style.min.css">
   <link rel="icon" href="../LOGO/KV-LOGO.png">
 </head>
 <body>
 
-<noscript><div class="noscript-warning"><i class="fas fa-exclamation-triangle"></i> This site works best with JavaScript enabled. Some features may not function properly.</div></noscript>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<noscript><style>.reveal,.reveal-left,.reveal-right,.reveal-scale,.stack-reveal>*,.blur-reveal{opacity:1!important;transform:none!important;filter:none!important}</style><div class="noscript-warning"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> This site works best with JavaScript enabled. Some features may not function properly.</div></noscript>
 <nav class="navbar" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo"><i class="fas fa-book-open" style="color:var(--accent)"></i><span>PM Shri KV Library</span></a>
-    <ul class="nav-links">
-      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+    <a href="../index.html" class="nav-logo"><i class="fas fa-book-open" aria-hidden="true" style="color:var(--accent)"></i><span>PM Shri KV Library</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
       <li><a href="../index.html#explore">Explore</a></li>
     </ul>
-    <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
   </div>
 </nav>
 
-<div class="sub-page">
+<main class="sub-page" id="main-content" tabindex="-1">
   <div class="sub-page-header blur-reveal visible">
-    <a href="../index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    <a href="../index.html" class="back-home"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Home</a>
     <h1 class="typing-effect" data-text="Educational Portals">Educational Portals</h1>
     <p>Curated digital learning platforms for students and teachers</p>
   </div>
@@ -35,71 +37,71 @@
     <div class="sub-grid stack-reveal">
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(1).jpeg" alt="Diksha" loading="lazy"></div>
-        <div class="sub-card-body"><h3>Diksha</h3><p>Digital infrastructure for knowledge sharing with NCERT resources.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://diksha.gov.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>Diksha</h2><p>Digital infrastructure for knowledge sharing with NCERT resources.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://diksha.gov.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(2).jpeg" alt="Swayam" loading="lazy"></div>
-        <div class="sub-card-body"><h3>Swayam</h3><p>Study Webs of Active Learning for Young Aspiring Minds - online courses.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://swayam.gov.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>Swayam</h2><p>Study Webs of Active Learning for Young Aspiring Minds - online courses.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://swayam.gov.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(3).jpeg" alt="ePathshala" loading="lazy"></div>
-        <div class="sub-card-body"><h3>ePathshala</h3><p>Digital education platform by NCERT for all grades.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://epathshala.nic.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>ePathshala</h2><p>Digital education platform by NCERT for all grades.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://epathshala.nic.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(4).jpeg" alt="NCERT Journals" loading="lazy"></div>
-        <div class="sub-card-body"><h3>NCERT Online Journal</h3><p>Digital journals and academic publications from NCERT.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://ncert.nic.in/ncertldd/collection/online_journal.html" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>NCERT Online Journal</h2><p>Digital journals and academic publications from NCERT.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://ncert.nic.in/ncertldd/collection/online_journal.html" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(5).jpeg" alt="StoryWeaver" loading="lazy"></div>
-        <div class="sub-card-body"><h3>StoryWeaver</h3><p>Free platform for children's stories in multiple languages.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://storyweaver.org.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>StoryWeaver</h2><p>Free platform for children's stories in multiple languages.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://storyweaver.org.in/" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(6).jpeg" alt="National Geographic" loading="lazy"></div>
-        <div class="sub-card-body"><h3>National Geographic</h3><p>Science, geography, and cultural educational content.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://www.nationalgeographic.com/science" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>National Geographic</h2><p>Science, geography, and cultural educational content.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://www.nationalgeographic.com/science" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(7).jpeg" alt="AP News" loading="lazy"></div>
-        <div class="sub-card-body"><h3>AP Student News</h3><p>News content curated specially for students.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://apnews.com/hub/student-news#" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>AP Student News</h2><p>News content curated specially for students.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://apnews.com/hub/student-news#" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
       <div class="sub-card">
         <div class="sub-card-image-wrap"><img src="../Educational Portals/Educational Portals(8).jpeg" alt="Barkha Series" loading="lazy"></div>
-        <div class="sub-card-body"><h3>Barkha Series (NCERT)</h3><p>Special educational reading series by NCERT for young learners.</p><div class="sub-card-meta">
-  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt"></i> 2025-26</span>
-  <span class="sub-card-meta-item"><i class="fas fa-users"></i> Students & Teachers</span>
-  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt"></i> KV Aliganj Library</span>
-</div><a href="https://ncert.nic.in/dee/barkha-series.php?ln=en" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt"></i></a></div>
+        <div class="sub-card-body"><h2>Barkha Series (NCERT)</h2><p>Special educational reading series by NCERT for young learners.</p><div class="sub-card-meta">
+  <span class="sub-card-meta-item"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025-26</span>
+  <span class="sub-card-meta-item"><i class="fas fa-users" aria-hidden="true"></i> Students &amp; Teachers</span>
+  <span class="sub-card-meta-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> KV Aliganj Library</span>
+</div><a href="https://ncert.nic.in/dee/barkha-series.php?ln=en" class="btn-primary" style="margin-top:12px;display:inline-flex" target="_blank" rel="noopener noreferrer">Visit <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></div>
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <footer aria-label="Footer">
   <div class="footer-inner">

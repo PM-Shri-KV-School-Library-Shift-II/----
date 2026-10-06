@@ -107,11 +107,12 @@
   }
 
   function doScrollTo(container, top) {
+    var behavior = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth';
     try {
       if (container === window) {
-        window.scrollTo({ top: top, behavior: 'smooth' });
+        window.scrollTo({ top: top, behavior: behavior });
       } else {
-        container.scrollTo({ top: top, behavior: 'smooth' });
+        container.scrollTo({ top: top, behavior: behavior });
       }
     } catch (e) {
       if (container === window) {
@@ -203,8 +204,9 @@
   }
 
   notif.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') hideNotification();
+    if (e.key === 'Escape') { hideNotification(); return; }
     if ((e.key === 'Enter' || e.key === ' ') && e.target !== closeBtn) {
+      e.preventDefault();
       scrollAndHighlight();
     }
   });

@@ -3,54 +3,46 @@
 <head>
   <meta name="google-site-verification" content="gZJdq22AXV-UlHmxhnXghX5RxaLgUjWfvhL39dxYnHI" />
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src 'none'; object-src 'none'; connect-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="description" content="PM SHRI Kendriya Vidyalaya, Aliganj (2nd Shift) Library - Explore books, digital resources, events and reading activities">
   <title>PM SHRI KV Aliganj (Shift II) - Library</title>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" integrity="sha384-/o6I2CkkWC//PSjvWC/eYN7l3xM3tJm8ZzVkCOfp//W05QcE3mlGskpoHB6XqI+B">
   <link rel="stylesheet" href="assets/css/style.min.css">
-  <link rel="icon" href="LOGO/KV-LOGO.png" type="image/png">
-  <!-- Change this -->
-  <link rel="icon" type="image/png" href="./LOGO/KV-LOGO.png"> 
-  <style>
-    .hero-content{max-width:1100px;width:100%}
-    .hero-title-row{display:grid;grid-template-columns:1fr minmax(0,560px) 1fr;align-items:center;column-gap:24px;width:100%;max-width:1100px;margin:0 auto 12px}
-    .hero-title-row h1{margin:0;min-width:0;max-width:560px;justify-self:center;text-align:center}
-    .hero-title-row .hero-logo-img{width:clamp(84px,14vw,132px);height:clamp(84px,14vw,132px);object-fit:contain;justify-self:center;filter:drop-shadow(0 2px 8px rgba(0,0,0,.06))}
-    @media(max-width:768px){.hero-title-row{grid-template-columns:1fr 1fr;grid-template-areas:"logo1 logo2" "title title";column-gap:20px;row-gap:38px;justify-items:center;align-content:center;padding-top:22px;margin:0 auto 18px}.hero-title-row .hero-logo-img:first-child{grid-area:logo1;justify-self:end;width:84px;height:84px}.hero-title-row .hero-logo-img:last-child{grid-area:logo2;justify-self:start;width:84px;height:84px}.hero-title-row h1{grid-area:title;max-width:100%;font-size:1.4rem;line-height:1.3;letter-spacing:0}}
-    @media(max-width:380px){.hero-title-row{row-gap:32px;padding-top:18px}.hero-title-row h1{font-size:1.15rem}.hero-title-row .hero-logo-img:first-child,.hero-title-row .hero-logo-img:last-child{width:72px;height:72px}}
-  </style>
+  <link rel="icon" type="image/png" href="LOGO/KV-LOGO.png">
 </head>
 <body>
 
-<noscript><div class="noscript-warning"><i class="fas fa-exclamation-triangle"></i> This site works best with JavaScript enabled. Some features may not function properly.</div></noscript>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<div class="scroll-container" role="main">
+<noscript><style>.reveal,.reveal-left,.reveal-right,.reveal-scale,.stack-reveal>*,.blur-reveal{opacity:1!important;transform:none!important;filter:none!important}</style><div class="noscript-warning"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> This site works best with JavaScript enabled. Some features may not function properly.</div></noscript>
 
-<!-- â•â•â• NAVBAR â•â•â• -->
+<div class="scroll-container">
+
+<!-- ═══ NAVBAR ═══ -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" aria-label="Home">
-      <i class="fas fa-book-open" style="color:var(--accent)"></i>
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <i class="fas fa-book-open" aria-hidden="true" style="color:var(--accent)"></i>
       <span>PM Shri KV Library</span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#hero" class="active">Home</a></li>
       <li><a href="#explore">Explore</a></li>
       <li><a href="#events">Events</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><i class="fas fa-bars" aria-hidden="true"></i></button>
   </div>
 </nav>
 
-<!-- â•â•â• HERO â•â•â• -->
+<main id="main-content" tabindex="-1">
+
+<!-- ═══ HERO ═══ -->
 <section class="hero scroll-section" id="hero">
   <div class="hero-bg-shapes" aria-hidden="true">
     <div class="hero-shape"></div>
@@ -65,12 +57,12 @@
     </div>
     <p class="blur-reveal visible" style="transition-delay:0.15s">Step into a sanctuary of wisdom and innovation. Our library is a gateway to endless possibilities, where every page turned is a new journey towards personal growth, academic excellence, and lifelong discovery.</p>
     <a href="#explore" class="hero-cta blur-reveal visible" style="transition-delay:0.3s">
-      Start Exploring <i class="fas fa-arrow-right"></i>
+      Start Exploring <i class="fas fa-arrow-right" aria-hidden="true"></i>
     </a>
   </div>
 </section>
 
-<!-- â•â•â• GLASS CARDS SECTION â•â•â• -->
+<!-- ═══ GLASS CARDS SECTION ═══ -->
 <section class="glass-cards-section scroll-section" id="explore" style="padding-top:100px">
   <div class="section-label reveal">
     <h2 class="typing-effect" data-text="Explore the Library">Explore the Library</h2>
@@ -79,156 +71,156 @@
   <div class="glass-cards-grid stack-reveal">
 
     <a href="sub-websites/websites.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-globe"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
       <h3>Websites</h3>
       <p>Quick access to essential official portals including NCERT and CBSE for the latest curriculum updates and educational guidelines.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/study-materials.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
       <h3>Study Materials</h3>
       <p>A robust collection of KV-specific study content, sample question papers, and official NCERT e-books to support your exam preparation.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/digital-libraries.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-digital-tachograph"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-digital-tachograph" aria-hidden="true"></i></div>
       <h3>Digital Libraries</h3>
       <p>Explore millions of open-access e-journals, the National Digital Library (NDL), Google Books, and the vast Internet Archive collection.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/career-cards.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-briefcase"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
       <h3>Career Cards</h3>
       <p>Navigate your future with expert guidance, scholarship information, and diverse vocational pathways available after completing Class 12th.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/educational-portals.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-school"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-school" aria-hidden="true"></i></div>
       <h3>Educational Portals</h3>
       <p>Leverage innovative government learning initiatives like Diksha, Swayam, ePathshala, and StoryWeaver for interactive self-paced learning.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/support-material.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-file-alt"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
       <h3>Support Material 2025-26</h3>
       <p>Specialized resources and comprehensive supplementary guides for students of Classes IX-XII to excel in their upcoming board examinations.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/quiz.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-puzzle-piece"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
       <h3>Online Quiz</h3>
       <p>Engage in subject-wise interactive assessments designed for all grade levels to reinforce learning and test your conceptual understanding.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="PDF-Ai/DocuMind%20AI.html" class="glass-card" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
-      <div class="glass-card-icon"><i class="fas fa-robot" style="color:#1565c0"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-robot" aria-hidden="true" style="color:#1565c0"></i></div>
       <h3>DocuMind AI</h3>
-      <p>Upload any PDF to get instant summaries, exam-ready notes, quizzes, flashcards, mind maps and AI answers â€” free, private and saved on your device.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <p>Upload any PDF to get instant summaries, exam-ready notes, quizzes, flashcards, mind maps and AI answers — free, private and saved on your device.</p>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/activities-videos.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-video"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
       <h3>Activity Videos</h3>
       <p>Relive the most inspiring moments of our library events, guest lectures, reading sessions, and vibrant school-wide celebrations.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/hindi-pustak-pradarshini.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-book"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
       <h3>Hindi Pustak Pradarshini</h3>
       <p>Celebrating the richness of Hindi literature through a curated exhibition of classic and contemporary works during Hindi Pakhwada.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/hindi-books-exhibition.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-book-reader"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-book-reader" aria-hidden="true"></i></div>
       <h3>Hindi Rajbhasha</h3>
       <p>Hindi Book Exhibition gallery - browse the inauguration, displays, book reviews and reading moments captured during Hindi Pakhwada.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/hindi-pakhwada.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-language"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-language" aria-hidden="true"></i></div>
       <h3>Hindi Pakhwada</h3>
       <p>A dedicated fortnight aimed at promoting the linguistic beauty, cultural significance, and literary heritage of our national language.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/book-exhibition.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-book-open"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
       <h3>Book Exhibition</h3>
       <p>Highlights from our student visits to the Gomti Pustak Mahotsav, exploring the vibrant world of publishing and author interactions.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/reading-week.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-newspaper"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></div>
       <h3>Reading Promotion Week</h3>
       <p>A dedicated initiative to ignite a passion for reading through creative workshops, ceremonies, and recognition of student achievements.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/digital-book-review.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-file-pdf"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></div>
       <h3>Digital Book Review</h3>
       <p>Showcasing critical analysis and creative perspectives of our students as they review and present their favorite literary works.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/world-book-day.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-calendar-day"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-calendar-day" aria-hidden="true"></i></div>
       <h3>World Book Day</h3>
       <p>Honoring the global impact of literature and advocating for the protection of intellectual property rights during our annual celebrations.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/multimedia.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-photo-video"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-photo-video" aria-hidden="true"></i></div>
       <h3>Multimedia</h3>
       <p>Broaden your horizons with a diverse collection of high-quality audiobooks, educational documentaries, and immersive language learning tools.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/biography.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-user-graduate"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-user-graduate" aria-hidden="true"></i></div>
       <h3>Biographies</h3>
       <p>Discover the fascinating life stories, enduring legacies, and profound inspirations of the world's most influential authors and literary figures.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/resources-books.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-layer-group"></i></div>
-      <h3>Books & Journals</h3>
+      <div class="glass-card-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+      <h3>Books &amp; Journals</h3>
       <p>A meticulously organized collection of physical books and academic journals spanning science, literature, mathematics, and beyond.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="Email%20Contact/Email.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-envelope"></i></div>
+      <div class="glass-card-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
       <h3>Contact Library</h3>
       <p>We are here to help you navigate our resources. Reach out for research assistance, book requests, or general library feedback.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
     <a href="sub-websites/ncf-splitup.html" class="glass-card">
-      <div class="glass-card-icon"><i class="fas fa-clipboard-list"></i></div>
-      <h3>NCF & Split Up</h3>
+      <div class="glass-card-icon"><i class="fas fa-clipboard-list" aria-hidden="true"></i></div>
+      <h3>NCF &amp; Split Up</h3>
       <p>Official pedagogical frameworks and structured monthly syllabus distributions for effective academic planning and teacher guidance.</p>
-      <span class="card-arrow"><i class="fas fa-arrow-right"></i></span>
+      <span class="card-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </a>
 
   </div>
 </section>
 
-<!-- â•â•â• STATS â•â•â• -->
+<!-- ═══ STATS ═══ -->
 <section class="stats-section scroll-section reveal" id="features">
   <div class="stats-grid">
     <div class="stat-item"><h3>10,000+</h3><p>Carefully Curated Volumes</p></div>
@@ -238,7 +230,7 @@
   </div>
 </section>
 
-<!-- â•â•â• FEATURES â•â•â• -->
+<!-- ═══ FEATURES ═══ -->
 <section class="features-section scroll-section">
   <div class="section-label reveal">
     <h2 class="typing-effect" data-text="Why Our Library?">Why Our Library?</h2>
@@ -246,50 +238,50 @@
   </div>
   <div class="features-grid stack-reveal">
     <div class="feature-item">
-      <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+      <div class="feature-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
       <h3>Extensive Collection</h3>
       <p>Our expansive physical archive includes over 10,000 titles, ranging from foundational school textbooks to diverse modern literature.</p>
     </div>
     <div class="feature-item">
-      <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+      <div class="feature-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
       <h3>Digital Resources</h3>
       <p>Enjoy seamless access to a vast network of e-books, scholarly databases, and global digital learning platforms available 24/7.</p>
     </div>
     <div class="feature-item">
-      <div class="feature-icon"><i class="fas fa-users"></i></div>
+      <div class="feature-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
       <h3>Reading Programs</h3>
       <p>Regularly organized literacy initiatives designed to foster a vibrant community of passionate readers, thinkers, and lifelong learners.</p>
     </div>
     <div class="feature-item">
-      <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+      <div class="feature-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
       <h3>Study Spaces</h3>
       <p>Modern, ergonomic spaces designed for both quiet individual reflection and dynamic group project collaboration in a serene atmosphere.</p>
     </div>
     <div class="feature-item">
-      <div class="feature-icon"><i class="fas fa-question-circle"></i></div>
+      <div class="feature-icon"><i class="fas fa-question-circle" aria-hidden="true"></i></div>
       <h3>Online Quiz Portal</h3>
       <p>A specialized digital portal offering gamified quizzes across subjects to make academic self-assessment both fun and highly effective.</p>
     </div>
     <div class="feature-item">
-      <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+      <div class="feature-icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
       <h3>Achievements</h3>
       <p>We take pride in celebrating excellence by recognizing and rewarding the outstanding reading milestones and literary achievements of our students.</p>
     </div>
   </div>
 </section>
 
-<!-- â•â•â• EVENTS SECTION â•â•â• -->
+<!-- ═══ EVENTS SECTION ═══ -->
 <section class="events-section scroll-section" id="events">
   <div class="section-label reveal">
-    <h2 class="typing-effect" data-text="Upcoming Events">Upcoming Events</h2>
-    <p>Join us for our upcoming workshops, creative competitions, and literary celebrations to enrich your school experience.</p>
+    <h2 class="typing-effect" data-text="Library Events">Library Events</h2>
+    <p>A look back at our workshops, creative competitions and literary celebrations that enrich our school community.</p>
   </div>
   <div class="events-grid stack-reveal">
 
     <div class="event-card" data-notification="OFF">
       <div class="event-date">April 23, 2026</div>
       <h3 class="event-title typing-effect" data-text="Poster Making Competition">Poster Making Competition</h3>
-      <p>A creative platform for students of classes 7â€“10 to visually interpret literary themes on World Book Day, fostering artistic expression alongside reading habits.</p>
+      <p>A creative platform for students of classes 7–10 to visually interpret literary themes on World Book Day, fostering artistic expression alongside reading habits.</p>
     </div>
 
     <div class="event-card" data-notification="OFF">
@@ -313,17 +305,19 @@
   </div>
 </section>
 
-<!-- â•â•â• CTA â•â•â• -->
+<!-- ═══ CTA ═══ -->
 <section class="cta-section scroll-section reveal" id="contact">
   <h2 class="typing-effect" data-text="Ready to dive into the world of books?">Ready to dive into the world of books?</h2>
   <p>Embark on your journey of discovery today. Whether you seek academic knowledge or the pleasure of a good story, our resources and team are here to help you succeed.</p>
   <div class="cta-buttons">
-    <a href="Email%20Contact/Email.html" class="btn-primary"><i class="fas fa-envelope"></i> Contact Library</a>
-    <a href="sub-websites/resources-books.html" class="btn-outline"><i class="fas fa-search"></i> Browse Resources</a>
+    <a href="Email%20Contact/Email.html" class="btn-primary"><i class="fas fa-envelope" aria-hidden="true"></i> Contact Library</a>
+    <a href="sub-websites/resources-books.html" class="btn-outline"><i class="fas fa-search" aria-hidden="true"></i> Browse Resources</a>
   </div>
 </section>
 
-<!-- â•â•â• FOOTER â•â•â• -->
+</main><!-- /main-content -->
+
+<!-- ═══ FOOTER ═══ -->
 <footer aria-label="Footer">
   <div class="footer-inner">
     <div class="footer-col">
@@ -352,14 +346,14 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 PM SHRI Kendriya Vidyalaya, Aliganj (2nd Shift) Library. Committed to fostering academic excellence and a lifelong passion for reading. All Rights Reserved.</p>
+    <p>&copy; <span id="footer-year">2026</span> PM SHRI Kendriya Vidyalaya, Aliganj (2nd Shift) Library. Committed to fostering academic excellence and a lifelong passion for reading. All Rights Reserved.</p>
   </div>
 </footer>
 
 </div><!-- /scroll-container -->
 
-<!-- â•â•â• EVENT NOTIFICATION POPUP â•â•â• -->
-<div id="event-notification" role="alert" aria-live="polite" aria-label="New school event notification">
+<!-- ═══ EVENT NOTIFICATION POPUP ═══ -->
+<div id="event-notification" role="status" aria-live="polite" aria-label="New school event notification">
   <div class="notif-bar">
     <div class="notif-bell-wrap">
       <svg class="notif-bell-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -378,7 +372,7 @@
   <div class="notif-progress-wrap">
     <div class="notif-progress-bar" id="notif-progress-bar"></div>
   </div>
-  <div class="notif-body" id="notif-body" style="cursor:pointer;">
+  <div class="notif-body" id="notif-body" role="button" tabindex="0" style="cursor:pointer;">
     <div class="notif-icon-wrap">
       <svg class="notif-star-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M12 2L14.09 8.26L20.58 8.27L15.45 12.14L17.18 18.52L12 14.9L6.82 18.52L8.55 12.14L3.42 8.27L9.91 8.26L12 2Z" fill="#3b82f6"/>
@@ -398,34 +392,17 @@
   </div>
 </div>
 
-<!-- â•â•â• UNDER DEVELOPMENT MODAL â•â•â• -->
-<div class="modal-overlay" id="devModal">
+<!-- ═══ UNDER DEVELOPMENT MODAL ═══ -->
+<div class="modal-overlay" id="devModal" role="dialog" aria-modal="true" aria-labelledby="devModalTitle" aria-hidden="true">
   <div class="modal-box">
-    <i class="fas fa-code"></i>
-    <h2>Under Development</h2>
+    <i class="fas fa-code" aria-hidden="true"></i>
+    <h2 id="devModalTitle">Under Development</h2>
     <p>We are currently refining this feature to ensure the best possible experience. We appreciate your patience as we continue to build something great for our digital library.</p>
-    <button class="modal-close-btn" onclick="closeDevModal()">Got it</button>
+    <button type="button" class="modal-close-btn" data-modal-close>Got it</button>
   </div>
 </div>
 
-<script>
-function openDevModal() {
-  document.getElementById('devModal').classList.add('active');
-}
-
-function closeDevModal() {
-  document.getElementById('devModal').classList.remove('active');
-}
-
-document.getElementById('devModal').addEventListener('click', function(e) {
-  if (e.target === this) closeDevModal();
-});
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeDevModal();
-});
-</script>
-
+<script src="assets/js/modal.js" defer></script>
 <script src="assets/js/bundle.min.js" defer></script>
 </body>
 </html>
